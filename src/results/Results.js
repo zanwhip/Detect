@@ -26,7 +26,7 @@ export default function Results({
         <View style={styles.predictionWrapper}>
           {isModelReady && image && (
             <Text style={styles.text}>
-              Predictions: {predictions ? "" : "Predicting..."}
+              Vocab: {predictions +"/n" ? "" : "Predicting..."}
             </Text>
           )}
           {isModelReady &&

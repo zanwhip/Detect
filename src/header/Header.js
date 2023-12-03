@@ -5,11 +5,7 @@ import { windowWidth, windowHeight } from "../constants";
 export default function Header() {
   return (
     <View style={styles.loadingContainer}>
-      <Image
-        source={require("../../assets/logo.png")}
-        style={styles.logo}
-        ImageResizeMode="cover"
-      />
+    
     </View>
   );
 }

@@ -5,6 +5,7 @@ import {
   View,
   TouchableOpacity,
   ActivityIndicator,
+  Image
 } from "react-native";
 import { windowWidth, windowHeight, yellow, green } from "../constants";
 import LottieView from "lottie-react-native";
@@ -12,12 +13,7 @@ import LottieView from "lottie-react-native";
 export default function PickImage({ isModelReady, selectImage, image }) {
   return (
     <View style={styles.container}>
-      <LottieView
-        source={require("../../assets/space-circle-2.json")}
-        style={styles.lottieContainer}
-        loop
-        autoPlay
-      />
+      <LottieView style={{ }}/>
       <TouchableOpacity
         style={styles.imageWrapper}
         onPress={isModelReady ? selectImage : undefined}
@@ -35,11 +31,14 @@ export default function PickImage({ isModelReady, selectImage, image }) {
           <View>
             {isModelReady ? (
               <View style={styles.textContainer}>
-                <Text style={styles.transparentText}>
+                
+                <Image
+              source={require("../../assets/upimage.png")} 
+              style={{ width: 150, height: 150, marginLeft : 100}}
+            />
+            <Text style={styles.transparentText}>
                   Tap to choose an image
                 </Text>
-                <Text style={styles.transparentText}>- OR -</Text>
-                <Text style={styles.transparentText}>Open camera below</Text>
               </View>
             ) : (
               <View style={styles.textContainer}>
@@ -62,9 +61,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    
   },
   imageWrapper: {
-    width: 280,
+    width:'100%',
     height: 280,
     padding: 10,
     marginTop: 40,
@@ -72,12 +72,16 @@ const styles = StyleSheet.create({
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
+    
   },
   textContainer: {
+    backgroundColor : '#FFF',
+    height : 200,
+    width : '100%',
     marginTop: windowHeight * 0.05,
   },
   transparentText: {
-    color: yellow,
+    color: 'black',
     fontFamily: "Copperplate",
     textAlign: "center",
     marginTop: windowHeight * 0.01,

@@ -8,7 +8,7 @@ import {
   LayoutAnimation,
   Modal,
 } from "react-native";
-import { customLayoutAnimation, windowWidth } from "./constants";
+import { customLayoutAnimation, windowWidth } from "../constants";
 import * as ImagePicker from "expo-image-picker";
 import * as tf from "@tensorflow/tfjs";
 import { fetch } from "@tensorflow/tfjs-react-native";
@@ -17,11 +17,11 @@ import Constants from "expo-constants";
 import * as Permissions from "expo-permissions";
 import * as jpeg from "jpeg-js";
 // Components
-import Header from "./header/Header";
-import PickImage from "./pickImage/PickImage";
-import CameraView from "./camera/CameraView";
-import Results from "./results/Results";
-import Footer from "./footer/Footer";
+import Header from "../header/Header";
+import PickImage from "../pickImage/PickImage";
+import CameraView from "../camera/CameraView";
+import Results from "../results/Results";
+import Footer from "../footer/Footer";
 
 const AppMain = () => {
   const [isTfReady, setIsTfReady] = useState(false);
@@ -187,7 +187,7 @@ const AppMain = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#111",
+    backgroundColor : '#FFF'
   },
   formContainer: {
     flexDirection: "row",

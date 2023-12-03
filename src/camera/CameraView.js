@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Text, View, TouchableWithoutFeedback, StyleSheet } from "react-native";
+import { Text, View, TouchableWithoutFeedback, StyleSheet , Image} from "react-native";
 import { Camera } from "expo-camera";
 import { windowHeight, windowWidth, red, green, blue } from "../constants";
 import {
@@ -38,12 +38,11 @@ export default function CameraView({ setImage, setCameraOpen }) {
     <View style={styles.container}>
       <Camera style={styles.camera} ref={cameraRef}>
         <View style={styles.cameraView}>
-          <Ionicons
-            name="ios-qr-scanner"
-            size={windowWidth * 1.1}
-            color={"white"}
-            style={styles.icon}
-          />
+          <Image
+              source={require("../../assets/scan.png")} 
+              style={{ transform: [{ scale: 0.6  }] , top : 0 ,marginLeft : 15}}
+            />
+
         </View>
       </Camera>
       <TouchableWithoutFeedback onPress={snap}>
@@ -57,12 +56,10 @@ export default function CameraView({ setImage, setCameraOpen }) {
 
       <View style={styles.backBtn}>
         <TouchableWithoutFeedback onPress={setCameraOpen}>
-          <AntDesign
-            name="caretright"
-            size={windowWidth * 0.19}
-            color={red}
-            // style={styles.iconBtn}
-          />
+         <Image
+              source={require("../../assets/album.jpg")} // Replace with your placeholder image
+              style={{ width:80, height: 80,  borderRadius : 20, marginBottom : 10}}
+            />
         </TouchableWithoutFeedback>
       </View>
     </View>
@@ -81,12 +78,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   cameraView: {
-    position: "absolute",
-    top: windowWidth * 0.35,
-    left: windowWidth * 0.06,
+    justifyContent : 'center',
+    alignItems :'center'
   },
   icon: {
-    opacity: 0.1,
+    opacity: 1,
+    
   },
   iconBtn: {
     position: "absolute",

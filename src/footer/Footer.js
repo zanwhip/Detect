@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { StyleSheet, View, Animated, Easing } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { windowWidth, windowHeight, red, green } from "../constants";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 
 export default function Footer({ toggleCamera, showBtn, isModelReady }) {
   const buttonAnimation = new Animated.Value(0);
@@ -79,17 +79,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     right: 0,
-    height: windowHeight * 0.2,
-    backgroundColor: red,
+    height: windowHeight * 0.18,
     opacity: 0.6,
     alignItems: "center",
-    borderTopRightRadius: windowWidth * 0.1,
-    borderTopLeftRadius: windowWidth * 0.1,
-    borderWidth: 4,
-    borderTopColor: green,
-    borderLeftColor: green,
-    borderRightColor: green,
-  },
+   },
   icon: {
     marginTop: windowHeight * 0.025,
     opacity: 0.8,
